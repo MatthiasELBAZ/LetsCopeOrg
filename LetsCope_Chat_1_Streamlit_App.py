@@ -31,7 +31,7 @@ def load_data():
     Settings.llm = OpenAI(
         model="gpt-3.5-turbo",
         temperature=0.0,
-        api_key=st.secrets.openai_key
+        api_key="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"
     )
 
     # load data
