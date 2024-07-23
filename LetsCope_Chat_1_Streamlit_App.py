@@ -2,7 +2,7 @@ import nest_asyncio
 nest_asyncio.apply()
 
 import streamlit as st
-
+import openai
 from llama_index.llms.openai import OpenAI
 from llama_index.agent.openai import OpenAIAgent
 from llama_index.core import VectorStoreIndex, Document, SimpleDirectoryReader, Settings
@@ -16,7 +16,7 @@ import pandas as pd
 
 st.set_page_config(page_title="Chat with the LetsCope docs, powered by LlamaIndex", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
 st.title("Chat with the LetsCope docs, powered by LlamaIndex 💬🦙")
-
+openai.api_key = "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"
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [
         {
@@ -28,10 +28,9 @@ if "messages" not in st.session_state.keys():  # Initialize the chat messages hi
 @st.cache_resource(show_spinner=False)
 def load_data():
     # make settings
-    Settings.llm = OpenAI(
+    llm = OpenAI(
         model="gpt-3.5-turbo",
-        temperature=0.0,
-        api_key="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"
+        temperature=0.0
     )
 
     # load data
