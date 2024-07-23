@@ -16,7 +16,7 @@ import pandas as pd
 
 st.set_page_config(page_title="Chat with the LetsCope docs, powered by LlamaIndex", page_icon="🦙", layout="centered", initial_sidebar_state="auto", menu_items=None)
 st.title("Chat with the LetsCope docs, powered by LlamaIndex 💬🦙")
-openai.api_key = "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"
+openai.api_key = st.secrets.openai_key
 if "messages" not in st.session_state.keys():  # Initialize the chat messages history
     st.session_state.messages = [
         {
@@ -157,8 +157,8 @@ for message in st.session_state.messages:  # Write message history to UI
 # If last message is not from assistant, generate a new response
 if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant"):
-        response_stream = st.session_state.chat_engine.stream_chat(prompt)
-        st.write_stream(response_stream.response_gen)
-        message = {"role": "assistant", "content": response_stream.response}
+        response = st.session_state.chat_engine.chat(prompt)
+        st.write(response.response)
+        message = {"role": "assistant", "content": response.response}
         # Add response to message history
         st.session_state.messages.append(message)
