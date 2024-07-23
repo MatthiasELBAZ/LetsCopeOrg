@@ -1,0 +1,9 @@
+llama-index==0.10.55
+llama-index-agent-openai==0.2.8
+llama-index-core==0.10.55
+llama-index-embeddings-openai==0.1.10
+llama-index-llms-openai==0.1.22
+llama-index-readers-file==0.1.30
+pandas==1.5.3
+nest-asyncio==1.6.0
+pathlib
