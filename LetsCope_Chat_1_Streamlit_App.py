@@ -54,7 +54,7 @@ def load_data():
         for _, row in data_content.iterrows()
     ]
 
-    reader = SimpleDirectoryReader(input_dir="./data_for_chat/data_articles")
+    reader = SimpleDirectoryReader(input_dir="./data_for_chat/data_article")
     data_program_documents = reader.load_data()
     splitter = SentenceSplitter(chunk_size=256, chunk_overlap=20)
     data_program_nodes = splitter.get_nodes_from_documents(data_program_documents)
@@ -68,7 +68,7 @@ def load_data():
     html_page_doc_set = {}
     html_page_all_docs = []
     for html_page in html_page_names:
-        html_page_docs = loader.load_data(file=Path(f"./data/data_website/{html_page}.html"), split_documents=False)
+        html_page_docs = loader.load_data(file=Path(f"./data_for_chat/data_website/{html_page}.html"), split_documents=False)
 
         # insert year metadata into each year
         for d in html_page_docs:
