@@ -6,5 +6,6 @@ llama-index-llms-openai==0.1.22
 llama-index-readers-file==0.1.30
 pandas==1.5.3
 nest-asyncio==1.6.0
+unstructured==0.13.3
 pathlib
 docx2txt
