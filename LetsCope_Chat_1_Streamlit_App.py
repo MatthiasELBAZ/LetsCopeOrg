@@ -84,9 +84,9 @@ def load_data():
     data_program_query_engine = data_program_index.as_query_engine()
     data_program_query_retriever = data_program_index.as_retriever(similarity_top_k=5)
 
-    data_program_index = VectorStoreIndex(data_program_nodes)
-    data_program_query_engine = data_program_index.as_query_engine()
-    data_program_query_retriever = data_program_index.as_retriever(similarity_top_k=5)
+    data_website_index = VectorStoreIndex.from_documents(html_page_all_docs)
+    data_website_query_engine = data_website_index.as_query_engine()
+    data_website_query_retriever = data_website_index.as_retriever(similarity_top_k=5)
 
     # create tools
     def find_top_k_docs(query: str):
