@@ -9,3 +9,4 @@ nest-asyncio==1.6.0
 unstructured==0.13.3
 pathlib
 docx2txt
+openai
