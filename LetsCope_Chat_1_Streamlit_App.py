@@ -54,7 +54,7 @@ def load_data():
         for _, row in data_content.iterrows()
     ]
 
-    reader = SimpleDirectoryReader(input_dir="./data_for_chat/data_article")
+    reader = SimpleDirectoryReader(input_dir="./data_for_chat/data_articles")
     data_program_documents = reader.load_data()
     splitter = SentenceSplitter(chunk_size=256, chunk_overlap=20)
     data_program_nodes = splitter.get_nodes_from_documents(data_program_documents)
