@@ -90,7 +90,7 @@ def load_data():
 
     # create tools
     def find_top_k_docs(query: str):
-        results = query_retiever.retrieve(query)
+        results = data_content_query_retiever.retrieve(query)
         elts = []
         for doc in results:
             doc.metadata["text"] = doc.text
