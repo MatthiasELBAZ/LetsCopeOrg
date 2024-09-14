@@ -8,7 +8,7 @@ First Part: letscope_data_fetching.py
 Second Part: Letscope_chat_2.py
 * it uses only LlamaIndex python package and OPENAI api key service.
 * Data folders
-*   data_articles: docx documents given by letscope and made by professionals
+* * data_articles: docx documents given by letscope and made by professionals
 *   data_content: constains the csv file generated previously with video's data
 *   data_membership: contain the json of all membership
 *   data_quiz: contain the json of all quizzes
